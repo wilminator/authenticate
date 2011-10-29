@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Init DB</title>
+</head>
+<body>
+DB init successful. Now do the following:
+<ol>
+  <li>Move the auth_pass.php file to the location you want it to be located in.  This is to allow for storage of the file in a location outside of the web server's path.</li>
+  <li>Move the auth directory and common_auth.php file into your PHP include path, if desired.</li>
+  <li>Edit the common_auth.php file so the AUTH_INCLUDE_DIR and AUTH_PASS_DIR defines point to the locations of the authentication.php and auth_pass.php files, respectively.
+    <ul>
+      <li>Use absolute paths (starting with /) for AUTH_INCLUDE_DIR and AUTH_PASS_DIR if you are not using an include path.  You will have to include the common_auth.php file with a relative path in every file you use this library from.</li>
+      <li>Use a relative path (likely 'auth/') for AUTH_INCLUDE_DIR and an absolute path for AUTH_PASS_DIR if you are using an include path.  Your include will simply be "include 'common_auth.php';"</li>
+      <li>If you do not want to use absolute paths or an include directory, you must copy the common_auth.php file into each directory you use this library and edit the defines each time. <b>You have been warned.</b></li>
+    </ul>  
+  </li>
+  <li>Delete this install directory.  It is only used to setup the database.</li>
+</ol>
+</body>
+</html>
